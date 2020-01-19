@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aos.system.dao.AosJobLogDao">
+
+    <insert id="insert" parameterType="AosJobLogPO">
+        insert into aos_job_log values (
+            #{job_log_id},
+            #{job_name},
+            #{job_group},
+            #{invoke_target},
+            #{job_message},
+            #{status},
+            #{exception_info},
+            #{create_time}
+        )
+    </insert>
+
+    <select id="listPage" parameterType="Dto" resultType="AosJobLogPO" useCache="false">
+        select 
+        <include refid="column"/>
+         from aos_job_log
+        <where>
+            <include refid="equal"/>
+        </where>
+    </select>
+
+    <sql id="column">
+        job_log_id,
+        job_name,
+        job_group,
+        invoke_target,
+        job_message,
+        status,
+        exception_info,
+        create_time
+    </sql>
+
+    <sql id="equal">
+        <if test="job_log_id!=null and job_log_id!=''">
+            and job_log_id = #{job_log_id}
+        </if>
+        <if test="job_name!=null and job_name!=''">
+            and job_name = #{job_name}
+        </if>
+        <if test="job_group!=null and job_group!=''">
+            and job_group = #{job_group}
+        </if>
+        <if test="invoke_target!=null and invoke_target!=''">
+            and invoke_target = #{invoke_target}
+        </if>
+        <if test="job_message!=null and job_message!=''">
+            and job_message = #{job_message}
+        </if>
+        <if test="status!=null and status!=''">
+            and status = #{status}
+        </if>
+        <if test="exception_info!=null and exception_info!=''">
+            and exception_info = #{exception_info}
+        </if>
+        <if test="create_time!=null and create_time!=''">
+            and create_time = #{create_time}
+        </if>
+    </sql>
+</mapper>

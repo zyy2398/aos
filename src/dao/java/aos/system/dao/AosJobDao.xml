@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aos.system.dao.AosJobDao">
+
+    <insert id="insert" parameterType="AosJobPO">
+        insert into aos_job (
+        <if test="job_name!=null and job_name!=''">
+            job_name,
+        </if>
+        <if test="job_group!=null and job_group!=''">
+            job_group,
+        </if>
+        <if test="invoke_target!=null and invoke_target!=''">
+            invoke_target,
+        </if>
+        <if test="cron_expression!=null and cron_expression!=''">
+            cron_expression,
+        </if>
+        <if test="misfire_policy!=null and misfire_policy!=''">
+            misfire_policy,
+        </if>
+        <if test="concurrent!=null and concurrent!=''">
+            concurrent,
+        </if>
+        <if test="status!=null and status!=''">
+            status,
+        </if>
+        <if test="create_by!=null and create_by!=''">
+            create_by,
+        </if>
+        <if test="create_time!=null and create_time!=''">
+            create_time,
+        </if>
+        <if test="update_by!=null and update_by!=''">
+            update_by,
+        </if>
+        <if test="update_time!=null and update_time!=''">
+            update_time,
+        </if>
+        <if test="remark!=null and remark!=''">
+            remark,
+        </if>
+        <if test="job_id!=null and job_id!=''">
+            job_id
+        </if>
+        ) values (
+        <if test="job_name!=null and job_name!=''">
+            #{job_name},
+        </if>
+        <if test="job_group!=null and job_group!=''">
+            #{job_group},
+        </if>
+        <if test="invoke_target!=null and invoke_target!=''">
+            #{invoke_target},
+        </if>
+        <if test="cron_expression!=null and cron_expression!=''">
+            #{cron_expression},
+        </if>
+        <if test="misfire_policy!=null and misfire_policy!=''">
+            #{misfire_policy},
+        </if>
+        <if test="concurrent!=null and concurrent!=''">
+            #{concurrent},
+        </if>
+        <if test="status!=null and status!=''">
+            #{status},
+        </if>
+        <if test="create_by!=null and create_by!=''">
+            #{create_by},
+        </if>
+        <if test="create_time!=null and create_time!=''">
+            #{create_time},
+        </if>
+        <if test="update_by!=null and update_by!=''">
+            #{update_by},
+        </if>
+        <if test="update_time!=null and update_time!=''">
+            #{update_time},
+        </if>
+        <if test="remark!=null and remark!=''">
+            #{remark},
+        </if>
+        <if test="job_id!=null and job_id!=''">
+            #{job_id}
+        </if>
+        )
+    </insert>
+
+    <update id="update" parameterType="AosJobPO">
+        update aos_job
+        <set>
+            <if test="job_id!=null and job_id!=''">
+                job_id = #{job_id},
+            </if>
+            <if test="job_name!=null and job_name!=''">
+                job_name = #{job_name},
+            </if>
+            <if test="job_group!=null and job_group!=''">
+                job_group = #{job_group},
+            </if>
+            <if test="invoke_target!=null and invoke_target!=''">
+                invoke_target = #{invoke_target},
+            </if>
+            <if test="cron_expression!=null and cron_expression!=''">
+                cron_expression = #{cron_expression},
+            </if>
+            <if test="misfire_policy!=null and misfire_policy!=''">
+                misfire_policy = #{misfire_policy},
+            </if>
+            <if test="concurrent!=null and concurrent!=''">
+                concurrent = #{concurrent},
+            </if>
+            <if test="status!=null and status!=''">
+                status = #{status},
+            </if>
+            <if test="create_by!=null and create_by!=''">
+                create_by = #{create_by},
+            </if>
+            <if test="create_time!=null and create_time!=''">
+                create_time = #{create_time},
+            </if>
+            <if test="update_by!=null and update_by!=''">
+                update_by = #{update_by},
+            </if>
+            <if test="update_time!=null and update_time!=''">
+                update_time = #{update_time},
+            </if>
+            <if test="remark!=null and remark!=''">
+                remark = #{remark},
+            </if>
+        </set>
+        <where>
+            <if test="job_id!=null and job_id!=''">
+                and job_id = #{job_id}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteByKey">
+        delete from aos_job where job_id=#{job_id}
+    </delete>
+
+    <select id="listPage" parameterType="Dto" resultType="AosJobPO" useCache="false">
+        SELECT
+        <include refid="column" />
+        from aos_job
+        <where>
+            <include refid="equal" />
+        </where>
+    </select>
+
+    <select id="selectJobById" resultType="AosJobPO">
+        SELECT
+        <include refid="column" />
+        from aos_job
+        where job_id = #{job_id}
+    </select>
+
+    <sql id="column">
+        job_id,
+        job_name,
+        job_group,
+        invoke_target,
+        cron_expression,
+        misfire_policy,
+        concurrent,
+        status,
+        create_by,
+        create_time,
+        update_by,
+        update_time,
+        remark
+    </sql>
+
+    <sql id="column2">
+        aos_job.job_id,
+        aos_job.job_name,
+        aos_job.job_group,
+        aos_job.invoke_target,
+        aos_job.cron_expression,
+        aos_job.misfire_policy,
+        aos_job.concurrent,
+        aos_job.status,
+        aos_job.create_by,
+        aos_job.create_time,
+        aos_job.update_by,
+        aos_job.update_time,
+        aos_job.remark
+    </sql>
+
+    <sql id="equal">
+        <if test="job_id!=null and job_id!=''">
+            and job_id = #{job_id}
+        </if>
+        <if test="job_name!=null and job_name!=''">
+            and job_name = #{job_name}
+        </if>
+        <if test="job_group!=null and job_group!=''">
+            and job_group = #{job_group}
+        </if>
+        <if test="invoke_target!=null and invoke_target!=''">
+            and invoke_target = #{invoke_target}
+        </if>
+        <if test="cron_expression!=null and cron_expression!=''">
+            and cron_expression = #{cron_expression}
+        </if>
+        <if test="misfire_policy!=null and misfire_policy!=''">
+            and misfire_policy = #{misfire_policy}
+        </if>
+        <if test="concurrent!=null and concurrent!=''">
+            and concurrent = #{concurrent}
+        </if>
+        <if test="status!=null and status!=''">
+            and status = #{status}
+        </if>
+        <if test="create_by!=null and create_by!=''">
+            and create_by = #{create_by}
+        </if>
+        <if test="create_time!=null and create_time!=''">
+            and create_time = #{create_time}
+        </if>
+        <if test="update_by!=null and update_by!=''">
+            and update_by = #{update_by}
+        </if>
+        <if test="update_time!=null and update_time!=''">
+            and update_time = #{update_time}
+        </if>
+        <if test="remark!=null and remark!=''">
+            and remark = #{remark}
+        </if>
+    </sql>
+</mapper>
