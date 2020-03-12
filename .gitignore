@@ -1,3 +1,8 @@
+.idea/
+out/
+aoslogs/
+META-INF/
+*.iml
 # Compiled class file
 *.class
 
