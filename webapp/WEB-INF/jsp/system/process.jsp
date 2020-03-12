@@ -68,6 +68,7 @@
 					<aos:column header="执行ID" dataIndex="id" width="120"/>
 					<aos:column header="流程实例ID" dataIndex="processInstanceId" width="200" />
 					<aos:column header="流程定义ID" dataIndex="processDefinitionId" width="200" />
+					<aos:column header="流程名" dataIndex="processDefinitionName" width="200" />
 					<aos:column header="当前环节" dataIndex="activityId" width="300" />
 					<aos:column header="是否挂起" dataIndex="suspended" width="120" />
 				</aos:gridpanel>
@@ -182,12 +183,12 @@
 
 			//删除运行中流程
 			function g_run_process_del() {
-				var selectionIds = AOS.selection(g_process, 'processInstanceId');
+				var selectionIds = AOS.selection(g_run_process, 'processInstanceId');
 				if (AOS.empty(selectionIds)) {
 					AOS.tip('删除前请先选中数据。');
 					return;
 				}
-				var rows = AOS.rows(g_process);
+				var rows = AOS.rows(g_run_process);
 				var msg = AOS.merge('确认要删除选中的[{0}]条数据吗？', rows);
 				AOS.confirm(msg, function (btn) {
 					if (btn === 'cancel') {
@@ -201,7 +202,7 @@
 						},
 						ok: function (data) {
 							AOS.tip(data.appmsg);
-							g_process_store.reload();
+							g_run_process_store.reload();
 						}
 					});
 				});
