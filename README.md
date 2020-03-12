@@ -1,10 +1,25 @@
 # AOS-shiro
 
 #### 介绍
-继承AOS系统的架构，添加shiro权限控制，activiti流程控制，job定时任务。
+继承AOS系统的架构，添加shiro权限控制，activiti5.20流程控制，job定时任务，动态数据源。
+更新jdk为1.8，spring更新为4.0.8
 
 #### 软件架构
-软件架构说明
+
+前端技术选择：
+- extjs4.2
+- ckfinder2
+- echart
+- jquery
+- bootstrap
+
+后端技术选择：
+- spring4.0.8
+- spring MVC
+- shiro
+- activiti5.20
+- druid
+- quartz
 
 
 #### 安装教程
