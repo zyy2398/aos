@@ -89,10 +89,10 @@ public class AOSServer {
 		} finally{
 	        //此Key在@see WebApplicationContextExporterListener中被赋值
 	        String flag = System.getProperty(AOSCons.WEBAPPCXT_IS_SUCCESS_KEY);
-	        String msg = "AOSuite启动成功";
-	        String supportMsg = " | AOSuite项目主页 >>http://git.oschina.net/osworks/AOS";
+	        String msg = "AOS-shiro启动成功";
+	        String supportMsg = " | AOS-shiro项目主页 >>https://gitee.com/papio/AOS-shiro";
 	        if ( !isSuccess || flag == null || flag.equals(AOSCons.STR_FALSE )) {
-	            msg = "AOSuite启动失败";
+	            msg = "AOS-shiro启动失败";
 	            log.error(msg);
 	            msg = msg + supportMsg;
 	            System.out.println(msg);
@@ -111,7 +111,7 @@ public class AOSServer {
 		        clipboard.setContents(stringSel, null);
 		        long alltime = System.currentTimeMillis() - start;
 		        msg = msg + "[" + alltime + "毫秒]" + " | 应用访问地址 >> " + webUrl + supportMsg;
-		        System.out.println(msg);
+                log.info(msg);
 				server.join(); 
 			}
 		}

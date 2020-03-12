@@ -1,6 +1,7 @@
 package aos.system.common.id;
 
 import java.math.BigInteger;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -88,6 +89,13 @@ public class IdService {
 	public BigInteger nextValue(String sequenceName) {
 		BigInteger value = (BigInteger)sqlDao.selectOne("Id.nextValue", sequenceName);
 		return value;
+	}
+
+	/**
+	 * 封装JDK自带的UUID, 通过Random数字生成, 中间无-分割.
+	 */
+	public static String uuid() {
+		return UUID.randomUUID().toString();
 	}
 	
 }

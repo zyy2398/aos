@@ -9,6 +9,8 @@ import aos.framework.core.redis.JedisUtil;
 import aos.framework.core.utils.AOSCons;
 import aos.framework.core.utils.AOSCxt;
 import aos.system.modules.cache.CacheUserDataService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
 
@@ -19,11 +21,16 @@ import redis.clients.jedis.Jedis;
  * @date 2010-04-13
  */
 public class AOSInitListener implements ServletContextListener{
-	
+	private static final Logger logger = LoggerFactory.getLogger(AOSInitListener.class);
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
 			initCache(sce);
+			StringBuilder sb = new StringBuilder();
+			sb.append("\r\n======================================================================\r\n");
+			sb.append("\r\n    欢迎使用 "+ AOSCxt.getParam("app_title")+"  - Powered By https://gitee.com/papio/AOS-shiro\r\n");
+			sb.append("\r\n======================================================================\r\n");
+			logger.info(sb.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
