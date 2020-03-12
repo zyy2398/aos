@@ -60,7 +60,7 @@ public class AOSTagUtils {
 	public static Tag getParent(Tag parentTag) {
 		String name = parentTag.getClass().getName();
 		// 当前标签的父标签是标准标签，则继续寻找，直到找到第一个自定义父标签
-		if (StringUtils.indexOf(name, STANDARD_TAG) != -1 && StringUtils.indexOf(name, SHIRO_TAG) != -1 ) {
+		if (StringUtils.indexOf(name, STANDARD_TAG) != -1 || StringUtils.indexOf(name, SHIRO_TAG) != -1 ) {
 			Tag temTag = parentTag.getParent();
 			while (true) {
 				String tempName = temTag.getClass().getName();
