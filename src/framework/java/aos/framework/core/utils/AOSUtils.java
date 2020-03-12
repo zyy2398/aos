@@ -44,6 +44,10 @@ import aos.framework.core.typewrap.Dto;
 import aos.framework.core.typewrap.Dtos;
 import aos.framework.core.typewrap.utils.TypeConvertUtil;
 import aos.framework.core.velocity.VelocityHelper;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <b>辅助工具类</b>
@@ -1003,10 +1007,15 @@ public class AOSUtils {
 	}
 
 	/**
-	 * 测试
-	 * 
-	 * @param args
+	 * 获取当前请求对象
+	 * @return
 	 */
-	public static void main(String args[]) {
+	public static HttpServletRequest getRequest(){
+		try{
+			return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+		}catch(Exception e){
+			return null;
+		}
 	}
+
 }

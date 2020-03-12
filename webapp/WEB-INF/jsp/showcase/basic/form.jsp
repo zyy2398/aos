@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="/WEB-INF/jsp/common/tags.jsp"%>
-
 <aos:html title="表单组件" base="http" lib="ext">
 <aos:body>
 	<div id="div_vercode" class="x-hidden" align="center">
@@ -9,6 +8,7 @@
 	<div id="div_photo" class="x-hidden" align="center">
 		<img id="img_photo" class="app_cursor_pointer" src="${cxt}/static/image/empty_head_photo.png" width="200" height="200">
 	</div>
+
 </aos:body>
 </aos:html>
 
@@ -86,6 +86,10 @@
 						<%-- 隐藏域用来存储弹出表格选中的ID --%>
 						<aos:hiddenfield name="card_id2" />
 						<aos:triggerfield fieldLabel="弹出选择表格" name="name_desc" editable="false" trigger1Cls="x-form-search-trigger" onTrigger1Click="w_account_find_show" columnWidth="0.25" />
+					</aos:fieldset>
+
+					<aos:fieldset title="文件上传" labelWidth="100" columnWidth="1" border="true">
+						<aos:filefield fieldLabel="选择文件" />
 					</aos:fieldset>
 
 					<aos:fieldset title="简单富文本编辑器" labelWidth="70" columnWidth="1" border="true">

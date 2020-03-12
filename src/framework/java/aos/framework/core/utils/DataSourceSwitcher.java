@@ -27,9 +27,6 @@ public class DataSourceSwitcher extends AbstractRoutingDataSource {
     @Override
     protected Object determineCurrentLookupKey() {
         String s = dataSourceKey.get();
-        if(LOGGER.isDebugEnabled()) {
-            LOGGER.debug("thread:{},determine,dataSource:{}", Thread.currentThread().getName(), s);
-        }
         return s;
     }
 

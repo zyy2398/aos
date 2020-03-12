@@ -78,7 +78,7 @@ public class MyRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpServletRequest request = AOSUtils.getRequest();
         // token是用户输入的用户名和密码
         // 第一步从token中取出用户名
         UsernamePasswordToken upToken = (UsernamePasswordToken) authenticationToken;

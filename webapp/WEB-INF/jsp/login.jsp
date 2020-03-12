@@ -199,7 +199,11 @@
 
 		//开发者快捷登录
 		AOS.job(function() {
-			if (login_dev_ == '1') {
+			if(self.frameElement && self.frameElement.tagName == "IFRAME"){
+				AOS.info('未登录或登录超时。请重新登录，谢谢！',function(){
+					top.location = "${ctx}";
+				});
+			} else if(login_dev_ == '1') {
 				fn_login_dev();
 			}
 		}, 1500);
@@ -228,5 +232,7 @@
 		function fn_reset() {
 			f_login.form.reset();
 		}
+
+
 	</script>
 </aos:onready>

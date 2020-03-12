@@ -8,6 +8,10 @@ package aos.framework.core.utils;
  * @date 2008-06-06
  */
 public class AOSCons {
+	/**
+	 * 上传文件基础虚拟路径
+	 */
+	public static final String USERFILES_BASE_URL = "/userfiles/";
 
 	/**
 	 * 日期格式

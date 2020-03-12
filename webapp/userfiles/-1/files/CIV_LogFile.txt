@@ -1,0 +1,19 @@
+PF_Cmd_GLOBAL_SETUP
+in_data.appl_id = PrMr
+PiPL version = 0x00204e00
+PiPL out_flags = 0x02008021
+PiPL out_flags2 = 0x00101409
+PPro version = d0103
+ColoristaRender  RenderThread start
+  0x000000004D1420B0GpuContext::CreateContext   hostName = magicbullet_colorista_iv_0001
+GpuContext  GL_VENDOR: NVIDIA Corporation
+GpuContext  Vendor = NV
+GpuContext  GL_RENDERER: GeForce MX150/PCIe/SSE2
+GpuContext  GL_SHADING_LANGUAGE_VERSION: 1.20 NVIDIA via Cg compiler
+ColoristaRender   GpuContext::CreateContext: 0
+ColoristaRender   threadInitResult: 0
+PF_Cmd_PARAMS_SETUP 
+PF_Cmd_GLOBAL_SETDOWN
+ColoristaRender::Exit
+ColoristaRender  RenderThread cleanup
+ColoristaRender   RenderThread end

@@ -2,6 +2,8 @@ package aos.framework.core.utils;
 
 import java.util.List;
 
+import com.ckfinder.connector.ServletContextFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,6 +62,26 @@ public class AOSCxt {
 	public static String getCfgOfXML(String key) {
 		String valueString = AOSCfgHandler.getValue(key);
 		return valueString;
+	}
+
+	/**
+	 * 获取上传文件的根目录
+	 * @return
+	 */
+	public static String getUserfilesBaseDir() {
+		String dir = getCfgOfXML("userfiles.basedir");
+		if (StringUtils.isBlank(dir)){
+			try {
+				dir = ServletContextFactory.getServletContext().getRealPath("/");
+			} catch (Exception e) {
+				return "";
+			}
+		}
+		if(!dir.endsWith("/")) {
+			dir += "/";
+		}
+//		System.out.println("userfiles.basedir: " + dir);
+		return dir;
 	}
 	
 	/**
