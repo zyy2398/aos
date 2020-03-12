@@ -111,6 +111,7 @@
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/ckfinderplugin-imageresize-2.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/mail-1.4.7.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/thumbnailator-0.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/hutool-all-5.1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
