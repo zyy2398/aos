@@ -5,12 +5,14 @@
 更新jdk为1.8，spring更新为4.0.8
 
 #### 软件架构
+
 前端技术选择：
 - extjs4.2
 - ckfinder2
 - echart
 - jquery
 - bootstrap
+
 后端技术选择：
 - spring4.0.8
 - spring MVC
