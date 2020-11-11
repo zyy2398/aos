@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            	
+    
+    
+    <wb-module deploy-name="AOS-shiro">
+        <wb-resource deploy-path="/" source-path="/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/system/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/dao/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/project/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/framework/java"/>
+                        		
+        
+        
+        <property name="context-root" value="AOS-shiro"/>
+                        		
+        
+        
+        <property name="java-output-path" value="/AOS-shiro/build/classes"/>
+                        	
+    
+    
+    </wb-module>
+            
+
+
+</project-modules>
