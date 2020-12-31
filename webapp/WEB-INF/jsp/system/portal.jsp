@@ -37,7 +37,7 @@
 	<script type="text/javascript">
 		//下载源代码
 		function fn_download() {
-			window.open("http://git.oschina.net/osworks/AOS");
+			window.open("https://gitee.com/papio/AOS-shiro");
 		}
 	</script>
 </aos:onready>

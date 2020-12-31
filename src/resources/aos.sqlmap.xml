@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
-        PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
-        "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+		PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+		"http://mybatis.apache.org/dtd/mybatis-3-config.dtd">
 
 <!-- MyBatis数据持久层配置文件 -->
 <configuration>
@@ -36,5 +36,19 @@
 		<plugin interceptor="aos.framework.core.dao.plugin.ResultSetHandlerPlugin" />
 		
 	</plugins>
+
+	<mappers>
+		<mapper resource="aos/system/modules/act/ActivitiMyTaskDao.xml"/>
+		<mapper resource="aos/system/modules/cache/CacheUserDataDao.xml"/>
+		<mapper resource="aos/system/modules/home/HomeDao.xml"/>
+		<mapper resource="aos/system/modules/masterdata/MasterDataDao.xml"/>
+		<mapper resource="aos/system/modules/module/ModuleDao.xml"/>
+		<mapper resource="aos/system/modules/org/OrgDao.xml"/>
+		<mapper resource="aos/system/modules/role/RoleDao.xml"/>
+		<mapper resource="aos/system/modules/user/UserDao.xml"/>
+		<mapper resource="aos/system/common/id/IdDao.xml"/>
+		<mapper resource="aos/framework/core/cache/CacheMasterDataDao.xml"/>
+		<mapper resource="aos/showcase/modules/demo/DemoDao.xml"/>
+	</mappers>
 
 </configuration>

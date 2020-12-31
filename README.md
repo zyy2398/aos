@@ -21,26 +21,10 @@
 - druid
 - quartz
 
+#### 在线体验
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
+个人博客 [papio的博客](http://11pt249505.qicp.vip:2333/)
+在线体验 [AOS-shiro](http://11pt249505.qicp.vip:10086/)
 
 #### 码云特技
 
